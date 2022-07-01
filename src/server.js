@@ -2,6 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import listEndpoints from "express-list-endpoints";
+import userRouter from "./apis/users/index.js";
+import accomdationRouter from "./apis/accomodations/index.js";
 
 import {
   unauthorizedHandler,
@@ -21,7 +23,8 @@ server.use(express.json());
 
 // ******************************************************* ENDPOINTS ***********************************************
 
-// server.use("/users", userRouter);
+server.use("/users", userRouter);
+server.use("/accomodations", accomdationRouter);
 
 // ***************************************************** ERROR HANDLERS ********************************************
 
